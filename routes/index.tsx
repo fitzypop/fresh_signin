@@ -1,18 +1,15 @@
-import Counter from "../islands/Counter.tsx";
+import Page from "@/components/Page.tsx";
+import { PageProps } from "$fresh/server.ts";
+import Counter from "@/islands/Counter.tsx";
 
-export default function Home() {
+export default function Home(_props: PageProps) {
   return (
-    <div class="p-4 mx-auto max-w-screen-md">
-      <img
-        src="/logo.svg"
-        class="w-32 h-32"
-        alt="the fresh logo: a sliced lemon dripping with juice"
-      />
-      <p class="my-6">
-        Welcome to `fresh`. Try updating this message in the ./routes/index.tsx
-        file, and refresh.
+    <Page>
+      <h1>Super Awesome App</h1>
+      <p>
+        <a href="/login">Login</a> | <a href="/signup">Sign Up</a>
       </p>
-      <Counter start={3} />
-    </div>
+      <Counter start={1} />
+    </Page>
   );
 }
