@@ -3,14 +3,17 @@ import Page from "@/components/Page.tsx";
 import supabase from "@/utils/supabase.ts";
 
 export const handler: Handlers = {
-  GET(req: Request, ctx: HandlerContext) {
+  async GET(req: Request, ctx: HandlerContext) {
     // console.log(await req.formData());
     const url = new URL(req.url);
     const email = url.searchParams.get("email") || "";
     const password = url.searchParams.get("password") || "";
 
     if (email && password) {
-      supabase.auth.signIn({ email, password });
+      const { error } = await supabase.auth.signIn({ email, password });
+      if (error) {
+        return ctx.render({ error });
+      }
     }
     return ctx.render();
   },
