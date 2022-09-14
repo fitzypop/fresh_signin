@@ -12,9 +12,13 @@ export const handler: Handlers = {
     if (email && password) {
       const { error } = await supabase.auth.signIn({ email, password });
       if (error) {
+        console.error(error);
         return ctx.render({ error });
+      } else {
+        return Response.redirect("/dash");
       }
     }
+
     return ctx.render();
   },
   POST(req: Request, ctx: HandlerContext) {
