@@ -19,7 +19,7 @@ export default function Index(_props: PageProps) {
     <Page>
       <h1>Super Awesome App</h1>
       <p>
-        <a href="/login">Login</a> | <a href="/signup">Sign Up</a>
+        <a href="/signin">Sign In</a> | <a href="/signup">Sign Up</a>
       </p>
       <Counter start={1} />
     </Page>

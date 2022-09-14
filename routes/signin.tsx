@@ -1,10 +1,13 @@
 import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
 import Page from "@/components/Page.tsx";
 import supabase from "@/utils/supabase.ts";
+import { ApiError } from "supabase";
 
-export const handler: Handlers = {
-  async GET(req: Request, ctx: HandlerContext) {
-    // console.log(await req.formData());
+interface LoginProps {
+  error?: ApiError;
+}
+export const handler: Handlers<LoginProps | null> = {
+  async GET(req: Request, ctx: HandlerContext<LoginProps>) {
     const url = new URL(req.url);
     const email = url.searchParams.get("email") || "";
     const password = url.searchParams.get("password") || "";
@@ -21,25 +24,19 @@ export const handler: Handlers = {
 
     return ctx.render();
   },
-  POST(req: Request, ctx: HandlerContext) {
-    console.log(req);
-    console.log("post request", req);
-    console.log("post context", ctx);
-    return ctx.render();
-  },
 };
 
-export default function Login({ error }) {
+export default function Login({ data }: PageProps<LoginProps | null>) {
   return (
     <Page>
       <h1>Login Page</h1>
       <p>
         <a href="/">Home</a> | <a href="/signup">Sign Up</a>
       </p>
-      {error
+      {data?.error
         ? (
           <div>
-            <p>{error}</p>
+            <p>{data.error}</p>
           </div>
         )
         : <></>}

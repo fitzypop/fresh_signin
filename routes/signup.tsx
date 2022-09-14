@@ -6,7 +6,7 @@ export default function Signup(_props: PageProps) {
     <Page>
       <h1>Sign Up Page</h1>
       <p>
-        <a href="/">Home</a> | <a href="/login">Login</a>
+        <a href="/">Home</a> | <a href="/sigin">Sign In</a>
       </p>
     </Page>
   );
