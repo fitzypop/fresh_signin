@@ -29,13 +29,20 @@ export const handler: Handlers = {
   },
 };
 
-export default function Login() {
+export default function Login({ error }) {
   return (
     <Page>
       <h1>Login Page</h1>
       <p>
         <a href="/">Home</a> | <a href="/signup">Sign Up</a>
       </p>
+      {error
+        ? (
+          <div>
+            <p>{error}</p>
+          </div>
+        )
+        : <></>}
       <form>
         <label>Email</label>
         <input
