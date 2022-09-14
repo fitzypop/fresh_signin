@@ -1,2 +1,11 @@
-# fresh_signin
-Create Web App with Login using Fresh
+# fresh_sign: fresh project
+
+## Usage
+
+Start the project:
+
+```sh
+deno task start
+```
+
+This will watch the project directory and restart as necessary.
