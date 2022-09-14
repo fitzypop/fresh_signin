@@ -1,10 +1,7 @@
-import { createClient, SupabaseClient } from "supabase";
-import envs from "@/utils/envs.ts";
+import { createClient } from "supabase";
 
-const supabase: SupabaseClient = createClient(
-  envs["PUBLIC_SUPABASE_URL"],
-  envs["PUBLIC_SUPABASE_API_KEY"],
-  {},
-);
+const url = Deno.env.get("PUBLIC_SUPABASE_URL") || "";
+const key = Deno.env.get("PUBLIC_SUPABASE_API_KEY") || "";
 
+const supabase = createClient(url, key, {});
 export default supabase;
