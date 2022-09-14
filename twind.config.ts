@@ -6,9 +6,10 @@ export default {
     colors: {
       transparent: "transparent",
       current: "currentColor",
+      "black": "#000000",
+      "oxford": "#112233", // oxford blue
       // "white": "#fff",
       "white": "#ECF0F1", // cultured
-      "oxford": "#112233", // oxford blue
     },
   },
 } as Options;
