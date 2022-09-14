@@ -2,6 +2,10 @@
 
 My attempt at a web app.
 
+## Usage
+
+WIP
+
 ## MVP
 
 List of basic requirements:
@@ -24,20 +28,20 @@ List of basic requirements:
 - [ ] 'Prod' db (planetscale, railway, supabase?)
   - [ ] Supabase looks cool, waiting for more deno support for Auth
 
+## Stack / Requirements
+
+Cuz every web dev loves/hates stacks
+
+- Deno
+- Fresh (framework)
+- Deno Deploy (website hosting)
+- Supabase (Auth/DB/Edge Functions)
+- Supabase CLI (local dev)
+
 ### Examples
 
 [Coding Garden](https://youtu.be/gARlBrjEnRw?t=6713)
-
-### Usage
-
-Start the project:
-
-```sh
-
-make run
-```
-
-This spin up a postgres docker container, and will watch the project directory and restart as necessary.
+[Supabase youtube](https://www.youtube.com/c/Supabase)
 
 ## My Notes
 
@@ -49,21 +53,24 @@ Login/Signup
 
 - [ ] Replace local postgres docker with supabase env
 
-WIP: [Brand Colors](https://coolors.co/112233-628395-ecf0f1-436436-ad5d4e)
+<strike>On Second thought, maybe this stack is not stable enough for production, but perfect for hacking and tweaking as
+ these tools continue to be developed.</strike>
 
-## Stack
+ESM imports for the WIN!!!!!! I think I can power this app with supabase-js library!!!!
 
-On Second thought, maybe this stack is not stable enough for production, but perfect for hacking and tweaking as
- these tools continue to be developed.
+**Supabase Support**:
 
-- [Fresh](https://fresh.deno.dev/) - Status: Ready
-- Deno - Status: Ready (mostly)
-- [Deno Deploy](https://deno.com/deploy) - Staus: Ready but possible unstable
-- [Supabase](https://supabase.com/) (db and user auth)
+- Using ESM import "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm" worked!!!!!
+
+
+## Helpful Links
+
+- [Fresh](https://fresh.deno.dev/)
+- [Deno Deploy](https://deno.com/deploy)
+- [Supabase](https://supabase.com/)
   - [supbase-js](https://supabase.com/docs/reference/javascript) JS client (might be able to use with deno)
-    - Using ESM import "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm" worked!!!!!
   - [supabase cli](https://supabase.com/blog/supabase-cli) - Status: Active Development, V1 ready
   - [native deno supbase postgres support](https://github.com/supabase/postgres-deno): Status - POC
-  - native deno supabase auth support - Status: unknown
 - Prisma:
   - [deno support](https://github.com/prisma/prisma/issues/2452) - Status - In Progress
+  - [prisma studio](https://www.prisma.io/studio)

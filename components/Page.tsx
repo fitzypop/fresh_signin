@@ -2,7 +2,7 @@ import { Head } from "$fresh/runtime.ts";
 import { ComponentChildren } from "preact";
 
 type PageProps = {
-  children: ComponentChildren;
+  children?: ComponentChildren;
 };
 
 export default function Page(props: PageProps) {
