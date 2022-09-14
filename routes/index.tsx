@@ -1,3 +1,4 @@
+// Splash Screen for site
 import Page from "@/components/Page.tsx";
 import { PageProps } from "$fresh/server.ts";
 import Counter from "@/islands/Counter.tsx";
