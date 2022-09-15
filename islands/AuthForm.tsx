@@ -1,4 +1,4 @@
-export default function LoginForm() {
+export default function AuthForm() {
   return (
     <div class="mt-2">
       <form>

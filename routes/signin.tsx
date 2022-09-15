@@ -4,7 +4,7 @@ import supaClient from "@/utils/supabase.ts";
 import { ApiError } from "supabase";
 import { getCredentials } from "@/utils/utils.ts";
 import { base_url } from "@/utils/config.ts";
-import LoginForm from "@/islands/LoginForm.tsx";
+import AuthForm from "@/islands/AuthForm.tsx";
 
 interface LoginProps {
   error?: ApiError;
@@ -15,10 +15,10 @@ export const handler: Handlers<LoginProps | null> = {
     const { email, password } = getCredentials(req);
 
     if (email && password) {
-      const { error } = await supaClient.auth.signIn({ email, password });
-      if (error) {
-        console.error(error);
-        return await ctx.render({ error });
+      const session = await supaClient.auth.signIn({ email, password });
+      console.log(session);
+      if (session?.error) {
+        return await ctx.render({ error: session.error });
       } else {
         return Response.redirect(new URL("dash", base_url));
       }
@@ -42,7 +42,7 @@ export default function Login({ data }: PageProps<LoginProps | null>) {
           </div>
         )
         : <></>}
-      <LoginForm />
+      <AuthForm />
     </Page>
   );
 }
