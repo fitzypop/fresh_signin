@@ -1,14 +1,8 @@
 import { MiddlewareHandlerContext } from "$fresh/server.ts";
-import { base_url } from "../utils/config.ts";
-import supaClient from "../utils/supabase.ts";
-// import supaClient from "@/utils/supabase.ts";
-
-// export interface MiddleState {
-//   data?: Record<string, unknown>;
-// }
+import { supabaseClient } from "@/utils/client.ts";
 
 export async function handler(
-  req: Request,
+  _req: Request,
   ctx: MiddlewareHandlerContext,
 ) {
   // console.log("request url", req.url);
@@ -19,7 +13,7 @@ export async function handler(
   // if (
   //   url.pathname !== signup.toString() || url.pathname !== signin.toString()
   // ) {
-  const session = supaClient.auth.session();
+  const session = supabaseClient.auth.session();
   console.log(session);
   //   if (!session) {
   //     return Response.redirect(new URL(base_url));

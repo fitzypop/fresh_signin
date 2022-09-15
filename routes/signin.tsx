@@ -1,6 +1,6 @@
 import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
 import Page from "@/components/Page.tsx";
-import supaClient from "@/utils/supabase.ts";
+import { supabaseClient } from "@/utils/client.ts";
 import { ApiError } from "supabase";
 import { getCredentials } from "@/utils/utils.ts";
 import { base_url } from "@/utils/config.ts";
@@ -28,13 +28,9 @@ export const handler: Handlers<LoginProps | null> = {
   },
 };
 
-export default function Login({ data }: PageProps<LoginProps | null>) {
+export default function SignIn({ data }: PageProps<LoginProps | null>) {
   return (
-    <Page>
-      <h1>Login Page</h1>
-      <p>
-        <a href="/">Home</a> | <a href="/signup">Sign Up</a>
-      </p>
+    <Page header="Sign Page">
       {data?.error
         ? (
           <div>

@@ -2,7 +2,7 @@
 import Page from "@/components/Page.tsx";
 import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
 import Counter from "@/islands/Counter.tsx";
-import supaClient from "@/utils/supabase.ts";
+import { supabaseClient } from "@/utils/client.ts";
 import { base_url } from "@/utils/config.ts";
 
 // export const handler: Handlers = {
@@ -17,11 +17,7 @@ import { base_url } from "@/utils/config.ts";
 
 export default function Index(_props: PageProps) {
   return (
-    <Page>
-      <h1>Super Awesome App</h1>
-      <p>
-        <a href="/signin">Sign In</a> | <a href="/signup">Sign Up</a>
-      </p>
+    <Page header="Home Page">
       <Counter start={1} />
     </Page>
   );

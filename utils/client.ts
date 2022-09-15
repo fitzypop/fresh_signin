@@ -5,5 +5,5 @@ const options: SupabaseClientOptions = {
   autoRefreshToken: true,
 };
 
-const supaClient = createClient(supabase_url, supabase_key, options);
-export default supaClient;
+const supabaseClient = createClient(supabase_url, supabase_key, options);
+export { supabaseClient };
