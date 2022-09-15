@@ -62,7 +62,6 @@ ESM imports for the WIN!!!!!! I think I can power this app with supabase-js libr
 
 - Using ESM import "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm" worked!!!!!
 
-
 ## Helpful Links
 
 - [Fresh](https://fresh.deno.dev/)

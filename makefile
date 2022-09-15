@@ -1,8 +1,8 @@
-pg-down:
-	docker stop fresh-pg
+supa-down:
+	supabase stop
 
-pg-up:
-	docker run -d -p 5432:5432 postgres --name fresh-pg
+supa-up:
+	supabase start
 
-up:pg-up
+up:supa-up
 	deno task start
