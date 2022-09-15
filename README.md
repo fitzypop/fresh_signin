@@ -10,12 +10,14 @@ WIP
 
 List of basic requirements:
 
-- Signup Page:
-  - [ ] Email/Password signup
+**V1 List** :
+
+- [ ] Signup Page:
+  - [x] Email/Password signup
   - [ ] Social login (google (required), [facebook, twitter, etc (stretch)])
   - redirect to home/dash screen
 - [ ] Login Page
-  - [ ] Email + Password
+  - [x] Email + Password
   - [ ] Social Logins
   - [ ] 2FA ? (stretch)
 - [ ] Set/Get User Cookie
@@ -24,9 +26,9 @@ List of basic requirements:
   - [ ] get user id when needed
   - [ ] secure stored/access cookies
   - [ ] Possible "Legal Cookie usage alert" popup thingy? (stretch)
-- [ ] Redirect to "user's home page"
-- [ ] 'Prod' db (planetscale, railway, supabase?)
-  - [ ] Supabase looks cool, waiting for more deno support for Auth
+- [x] Redirect to "user's home page"
+- [x] 'Prod' db (planetscale, railway, supabase?)
+  - [x] Supabase looks cool <strike>, waiting for more deno support for Auth</strike>
 
 ## Stack / Requirements
 
@@ -51,7 +53,7 @@ Login/Signup
   - [x] Use makefile to spin up and down postgres container
   - [ ] Might need docker-compose for volume mounting and other docker stuff
 
-- [ ] Replace local postgres docker with supabase env
+- [x] Replace local postgres docker with supabase env
 
 <strike>On Second thought, maybe this stack is not stable enough for production, but perfect for hacking and tweaking as
  these tools continue to be developed.</strike>
@@ -60,7 +62,7 @@ ESM imports for the WIN!!!!!! I think I can power this app with supabase-js libr
 
 **Supabase Support**:
 
-- Using ESM import "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm" worked!!!!!
+- Using ESM import "https://esm.sh/@supabase/supabase-js@1.35.6" worked!!!!!
 
 ## Helpful Links
 
