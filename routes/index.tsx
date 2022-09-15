@@ -6,7 +6,7 @@ import supabase from "@/utils/supabase.ts";
 
 export const handler: Handlers = {
   GET(req: Request, ctx: HandlerContext) {
-    console.log(supabase);
+    // console.log(supabase);
     if (supabase.auth.session()) {
       return Response.redirect(new URL(`${req.url}dash`));
     }
