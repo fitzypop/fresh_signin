@@ -4,18 +4,18 @@ import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
 import Counter from "@/islands/Counter.tsx";
 import supaClient from "@/utils/supabase.ts";
 
-export const handler: Handlers = {
-  GET(req: Request, ctx: HandlerContext) {
-    // console.log(supabase);
-    // if (supaClient.auth.session()) {
-    //   return Response.redirect(new URL(`${req.url}dash`));
-    // }
-    // return ctx.render();
-    console.log(req.url);
-    console.log(ctx);
-    return ctx.render();
-  },
-};
+// export const handler: Handlers = {
+//   GET(req: Request, ctx: HandlerContext) {
+//     // console.log(supabase);
+//     // if (supaClient.auth.session()) {
+//     //   return Response.redirect(new URL(`${req.url}dash`));
+//     // }
+//     // return ctx.render();
+//     console.log(req.url);
+//     console.log(ctx);
+//     return ctx.render();
+//   },
+// };
 
 export default function Index(_props: PageProps) {
   return (

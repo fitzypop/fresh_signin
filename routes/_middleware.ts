@@ -5,8 +5,9 @@ interface State {
   data?: Record<string, unknown>;
 }
 export async function handler(
-  _req: Request,
+  req: Request,
   ctx: MiddlewareHandlerContext<State>,
 ) {
+  console.log("request url", req.url);
   return await ctx.next();
 }
