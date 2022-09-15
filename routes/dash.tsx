@@ -3,8 +3,8 @@ import Page from "@/components/Page.tsx";
 
 export default function Dash() {
   return (
-    <Page>
-      <p>User Dashboard</p>
+    <Page header="Dashboard">
+      <p>You're logged in!</p>
     </Page>
   );
 }
