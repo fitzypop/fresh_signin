@@ -7,6 +7,7 @@ import { base_url } from "@/utils/config.ts";
 
 export const handler: Handlers = {
   async GET(_req: Request, ctx: HandlerContext) {
+    const { user, session, error } = supaClient.auth.api.getUser();
     if (supaClient.auth.session()) {
       return Response.redirect(new URL(new URL("dash", base_url)));
     }

@@ -20,7 +20,7 @@ export const handler: Handlers<LoginProps | null> = {
         console.error(error);
         return await ctx.render({ error });
       } else {
-        return Response.redirect(`${base_url}/dash`);
+        return Response.redirect(new URL("dash", base_url));
       }
     }
 
