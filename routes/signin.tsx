@@ -30,7 +30,7 @@ export const handler: Handlers<LoginProps | null> = {
 
 export default function SignIn({ data }: PageProps<LoginProps | null>) {
   return (
-    <Page header="Sign Page">
+    <Page header="Sign In Page">
       {data?.error
         ? (
           <div>
