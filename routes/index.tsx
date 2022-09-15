@@ -2,14 +2,17 @@
 import Page from "@/components/Page.tsx";
 import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
 import Counter from "@/islands/Counter.tsx";
-import supabase from "@/utils/supabase.ts";
+import supaClient from "@/utils/supabase.ts";
 
 export const handler: Handlers = {
   GET(req: Request, ctx: HandlerContext) {
     // console.log(supabase);
-    if (supabase.auth.session()) {
-      return Response.redirect(new URL(`${req.url}dash`));
-    }
+    // if (supaClient.auth.session()) {
+    //   return Response.redirect(new URL(`${req.url}dash`));
+    // }
+    // return ctx.render();
+    console.log(req.url);
+    console.log(ctx);
     return ctx.render();
   },
 };

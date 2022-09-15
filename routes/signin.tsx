@@ -1,6 +1,6 @@
 import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
 import Page from "@/components/Page.tsx";
-import supabase from "@/utils/supabase.ts";
+import supaClient from "@/utils/supabase.ts";
 import { ApiError } from "supabase";
 
 interface LoginProps {
@@ -13,7 +13,7 @@ export const handler: Handlers<LoginProps | null> = {
     const password = url.searchParams.get("password") || "";
 
     if (email && password) {
-      const { error } = await supabase.auth.signIn({ email, password });
+      const { error } = await supaClient.auth.signIn({ email, password });
       if (error) {
         console.error(error);
         return ctx.render({ error });
