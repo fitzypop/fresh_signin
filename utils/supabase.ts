@@ -8,6 +8,7 @@ const env = await config();
 if (!env) {
   console.log("empty env", env);
 }
+console.log(env);
 const url = env.PUBLIC_SUPABASE_URL || Deno.env.get("PUBLIC_SUPABASE_URL") ||
   "";
 const key = env.PUBLIC_SUPABASE_API_KEY ||
