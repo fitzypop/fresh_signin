@@ -17,7 +17,7 @@ export const handler: Handlers = {
     return await ctx.render();
   },
 };
-export default function SignUp(_props: PageProps) {
+export default function SignUp({ data, url }: PageProps) {
   return (
     <PageLayout header="Sign Up Page">
       <AuthForm />

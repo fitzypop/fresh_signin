@@ -1,4 +1,7 @@
-export default function AuthForm() {
+interface AuthFormProps {
+}
+
+export default function AuthForm({}: AuthFormProps) {
   return (
     <div class="mt-2">
       <form class="border-2 px-4 py-5">

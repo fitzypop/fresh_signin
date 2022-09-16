@@ -20,7 +20,7 @@ export const handler: Handlers<LoginProps> = {
       if (session?.error) {
         return await ctx.render({ error: session.error });
       } else {
-        return Response.redirect(new URL("dash", base_url));
+        return Response.redirect(base_url);
       }
     }
 
@@ -28,7 +28,7 @@ export const handler: Handlers<LoginProps> = {
   },
 };
 
-export default function SignIn({ data }: PageProps<LoginProps | null>) {
+export default function SignIn({ data, url }: PageProps<LoginProps | null>) {
   return (
     <PageLayout header="Sign In Page">
       {data?.error

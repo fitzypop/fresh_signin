@@ -2,9 +2,9 @@ export default function Navbar() {
   const hoverEffect = "hover:bg-white hover:text-black";
   const navItem = "inline-block m-1 px-1 ";
   return (
-    <nav>
-      <div
-        class="bg-black text-white text-[1.5rem] flex justify-between items-center"
+    <div class="bg-black text-white text-[1.5rem]">
+      <nav
+        class="flex justify-between items-center"
         id="navbar"
       >
         <div class={`ml-2 ${hoverEffect}`} id="supa-fresh-logo">
@@ -31,7 +31,7 @@ export default function Navbar() {
             <a href="/signup">Sign Up</a>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }
