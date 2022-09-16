@@ -6,4 +6,4 @@ const options: SupabaseClientOptions = {
 };
 
 const supabaseClient = createClient(supabase_url, supabase_key, options);
-export { supabaseClient };
+export default supabaseClient;

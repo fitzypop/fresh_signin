@@ -1,5 +1,5 @@
 import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
-import { supabaseClient } from "@/utils/client.ts";
+import supabaseClient from "@/utils/client.ts";
 import { ApiError } from "supabase";
 import { getCredentials } from "@/utils/utils.ts";
 import { base_url } from "@/utils/config.ts";
@@ -10,7 +10,7 @@ interface LoginProps {
   error?: ApiError;
 }
 
-export const handler: Handlers<LoginProps | null> = {
+export const handler: Handlers<LoginProps> = {
   async GET(req: Request, ctx: HandlerContext<LoginProps>) {
     const { email, password } = getCredentials(req);
 
