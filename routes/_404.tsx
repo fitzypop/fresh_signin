@@ -1,10 +1,10 @@
 import { UnknownPageProps } from "$fresh/server.ts";
-import Page from "@/components/Page.tsx";
+import PageLayout from "@/components/PageLayout.tsx";
 
 export default function Error({ url }: UnknownPageProps) {
   return (
-    <Page>
+    <PageLayout header="Error">
       <p>Error 404: Page Not Found! {url.toString()}</p>
-    </Page>
+    </PageLayout>
   );
 }

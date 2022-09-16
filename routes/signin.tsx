@@ -1,10 +1,10 @@
 import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
-import Page from "@/components/Page.tsx";
 import { supabaseClient } from "@/utils/client.ts";
 import { ApiError } from "supabase";
 import { getCredentials } from "@/utils/utils.ts";
 import { base_url } from "@/utils/config.ts";
 import AuthForm from "@/islands/AuthForm.tsx";
+import PageLayout from "@/components/PageLayout.tsx";
 
 interface LoginProps {
   error?: ApiError;
@@ -15,7 +15,7 @@ export const handler: Handlers<LoginProps | null> = {
     const { email, password } = getCredentials(req);
 
     if (email && password) {
-      const session = await supaClient.auth.signIn({ email, password });
+      const session = await supabaseClient.auth.signIn({ email, password });
       console.log(session);
       if (session?.error) {
         return await ctx.render({ error: session.error });
@@ -30,7 +30,7 @@ export const handler: Handlers<LoginProps | null> = {
 
 export default function SignIn({ data }: PageProps<LoginProps | null>) {
   return (
-    <Page header="Sign In Page">
+    <PageLayout header="Sign In Page">
       {data?.error
         ? (
           <div>
@@ -39,6 +39,6 @@ export default function SignIn({ data }: PageProps<LoginProps | null>) {
         )
         : <></>}
       <AuthForm />
-    </Page>
+    </PageLayout>
   );
 }

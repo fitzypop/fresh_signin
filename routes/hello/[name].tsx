@@ -1,9 +1,9 @@
 import { PageProps } from "$fresh/server.ts";
-import Page from "@/components/Page.tsx";
+import PageLayout from "@/components/PageLayout.tsx";
 
 export default function Greet(props: PageProps) {
   return (
-    <Page>
+    <PageLayout>
       <p>
         Url is: {props.url}
         <hr />
@@ -11,7 +11,7 @@ export default function Greet(props: PageProps) {
         <hr />
         Hello {props.params.name}
       </p>
-    </Page>
+    </PageLayout>
   );
 }
 

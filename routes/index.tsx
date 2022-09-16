@@ -1,24 +1,24 @@
 // Splash Screen for site
-import Page from "@/components/Page.tsx";
 import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
-import Counter from "@/islands/Counter.tsx";
 import { supabaseClient } from "@/utils/client.ts";
 import { base_url } from "@/utils/config.ts";
+import DashPage from "@/components/DashPage.tsx";
+import LandingPage from "@/components/LandingPage.tsx";
 
-// export const handler: Handlers = {
-//   async GET(_req: Request, ctx: HandlerContext) {
-//     const { user, session, error } = supaClient.auth.api.getUser();
-//     if (supaClient.auth.session()) {
-//       return Response.redirect(new URL(new URL("dash", base_url)));
-//     }
-//     return await ctx.render();
+interface IndexProps {
+  user?: Record<string, unknown> | null;
+}
+
+// export const handler: Handlers<IndexProps> = {
+//   async GET(_req: Request, ctx: HandlerContext<IndexProps>) {
+//     return await ctx.render({ user: null });
 //   },
 // };
 
-export default function Index(_props: PageProps) {
+export default function Index({ data }: PageProps<IndexProps | null>) {
   return (
-    <Page header="Home Page">
-      <Counter start={1} />
-    </Page>
+    <>
+      {data?.user ? <DashPage user={data.user} /> : <LandingPage />}
+    </>
   );
 }

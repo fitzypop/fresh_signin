@@ -1,10 +1,17 @@
 # fresh_sign: fresh project
 
-My attempt at a web app.
+My attempt at a web app using deno, fresh, and supabase.
 
 ## Usage
 
-WIP
+```sh
+# Spin up local supabase 
+# and run `deno task start`
+make start
+
+# Spin down local supabase
+supabase stop
+```
 
 ## MVP
 
@@ -12,12 +19,14 @@ List of basic requirements:
 
 **V1 List** :
 
-- [ ] Signup Page:
+- [] Signup Page:
   - [x] Email/Password signup
+  - [ ] Enrpyt Password
   - [ ] Social login (google (required), [facebook, twitter, etc (stretch)])
   - redirect to home/dash screen
-- [ ] Login Page
+- [] Login Page
   - [x] Email + Password
+  - [ ] Encrpyt Password
   - [ ] Social Logins
   - [ ] 2FA ? (stretch)
 - [ ] Set/Get User Cookie
@@ -26,7 +35,7 @@ List of basic requirements:
   - [ ] get user id when needed
   - [ ] secure stored/access cookies
   - [ ] Possible "Legal Cookie usage alert" popup thingy? (stretch)
-- [x] Redirect to "user's home page"
+- [x] Redirect to "user's dashboard"
 - [x] 'Prod' db (planetscale, railway, supabase?)
   - [x] Supabase looks cool <strike>, waiting for more deno support for Auth</strike>
 

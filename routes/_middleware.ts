@@ -13,8 +13,8 @@ export async function handler(
   // if (
   //   url.pathname !== signup.toString() || url.pathname !== signin.toString()
   // ) {
-  const session = supabaseClient.auth.session();
-  console.log(session);
+  // const session = supabaseClient.auth.session();
+  // console.log(session);
   //   if (!session) {
   //     return Response.redirect(new URL(base_url));
   //   }

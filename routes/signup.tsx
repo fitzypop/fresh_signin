@@ -1,9 +1,9 @@
 import { HandlerContext, Handlers, PageProps } from "$fresh/server.ts";
-import Page from "@/components/Page.tsx";
 import { base_url } from "@/utils/config.ts";
 import { supabaseClient } from "@/utils/client.ts";
 import { getCredentials } from "@/utils/utils.ts";
 import AuthForm from "@/islands/AuthForm.tsx";
+import PageLayout from "@/components/PageLayout.tsx";
 
 export const handler: Handlers = {
   async GET(req: Request, ctx: HandlerContext) {
@@ -19,8 +19,8 @@ export const handler: Handlers = {
 };
 export default function SignUp(_props: PageProps) {
   return (
-    <Page header="Sign Up Page">
+    <PageLayout header="Sign Up Page">
       <AuthForm />
-    </Page>
+    </PageLayout>
   );
 }
