@@ -1,6 +1,8 @@
 {
   "imports": {
     "@/": "./",
+    "deno_grant": "https://deno.land/x/deno_grant@v0.3.0/mod.ts",
+    "deno_grant/": "https://deno.land/x/deno_grant@v0.3.0/src/",
     "dotenv": "https://deno.land/std@0.155.0/dotenv/mod.ts",
     "$fresh/": "https://deno.land/x/fresh@1.1.1/",
     "preact": "https://esm.sh/preact@10.11.0",
